@@ -1,0 +1,78 @@
+{% extends "shop/base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout - KANJIVASTRA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+  <h2 class="mb-4">Checkout</h2>
+
+  <h4>Shipping Address</h4>
+
+  {% if address %}
+    <div class="card p-3 mb-3">
+      <p><strong>{{ address.full_name }}</strong> | {{ address.phone }}</p>
+      <p>{{ address.address_line1 }} {{ address.address_line2 }}</p>
+      <p>{{ address.city }}, {{ address.state }} - {{ address.pincode }}</p>
+      
+      <!-- Confirm Order directly -->
+      <form method="POST" action="{% url 'shop:confirm_order' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success w-100 mb-2">Confirm Order (COD)</button>
+      </form>
+      
+      <!-- Change Address button -->
+      <button class="btn btn-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#newAddress" aria-expanded="false" aria-controls="newAddress">
+        Change Address
+      </button>
+    </div>
+  {% endif %}
+
+  <!-- Address Form (collapsed by default) -->
+  <div id="newAddress" class="collapse {% if not address %}show{% endif %}">
+    <div class="card p-3 mb-3">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label>Full Name</label>
+          <input type="text" name="full_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Phone</label>
+          <input type="text" name="phone" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Address Line 1</label>
+          <input type="text" name="address_line1" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Address Line 2</label>
+          <input type="text" name="address_line2" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label>City</label>
+          <input type="text" name="city" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>State</label>
+          <input type="text" name="state" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Pincode</label>
+          <input type="text" name="pincode" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Save Address & Confirm Order (COD)</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

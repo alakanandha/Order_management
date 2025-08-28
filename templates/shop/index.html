@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KANJIVASTHRA - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-bar .w3-button {padding:16px}
+    .hero-img {height: 80vh; object-fit: cover;}
+    .product-img {
+  width: 100%;
+  height: 500px;   /* set equal height for all */
+  object-fit: cover; /* crop without distortion */
+  border-radius: 5px; /* optional */
+}
+  </style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-wide"><b>KANJIVASTHRA</b></a>
+    <div class="w3-right w3-hide-small">
+    <a href="{% url 'shop:customer_login' %}" class="w3-bar-item w3-button">Login</a>
+      <a href="#collections" class="w3-bar-item w3-button">Collections</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-shopping-cart"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<header class="w3-display-container w3-wide" style="margin-top:64px">
+  <img class="hero-img" src="https://www.palamsilk.com/cdn/shop/files/banner1_feb3b509-7670-4dfd-9aaa-e05c51207f5b_2000x.jpg?v=1675852218" alt="Hero Image" width="100%">
+  <div class="w3-display-middle w3-center">
+    <h1 class="w3-xxlarge w3-text-white w3-animate-top"><b>NEW ARRIVALS</b></h1>
+    <p><a href="#collections" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Shop Now</a></p>
+  </div>
+</header>
+
+<!-- Collections -->
+<div class="w3-container w3-padding-64" id="collections">
+  <h2 class="w3-center w3-text-dark-grey">Our Collections</h2>
+  <p class="w3-center w3-large">Explore the latest in fashion</p>
+  
+  <div class="w3-row-padding w3-center" style="margin-top:32px">
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMqdBXHRd-SuZh2gFBsfF4d8slw7sN0mNMHr77-2J8E5pLTcAOjGjwOFudCH1hMA6ThDA&usqp=CAU" 
+         alt="Shirt" class="product-img">
+    <h3>Kanjipuram</h3>
+    <p>Rich & Traditional</p>
+  </div>
+
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="https://assets0.mirraw.com/images/13104111/Guide_Line_-_Saree_0017_image_zoom_(6)_zoom.jpg?1743771676" 
+         alt="Dress" class="product-img">
+    <h3>Banarasi</h3>
+    <p>Elegant & Stylis</p>
+  </div>
+
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="https://images.meesho.com/images/products/422521849/ybovz_512.webp?width=512" 
+         alt="Jeans" class="product-img">
+    <h3>Cotton</h3>
+    <p>Light & Comfortable</p>
+  </div>
+
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb747EURIPaeCNxgEYJfO85G2C53b6VVKHEhr64kOGyZyMnsoeazNJcTpSAcfDrs665gE&usqp=CAU" 
+         alt="Shoes" class="product-img">
+    <h3>Chiffon</h3>
+    <p>Soft & Stylish</p>
+  </div>
+</div>
+
+</div>
+
+<!-- Promo Banner -->
+<div class="w3-container w3-black w3-center w3-padding-64">
+  <h1 class="w3-jumbo">50% OFF SALE</h1>
+  <p class="w3-xlarge">On selected collections this week only!</p>
+  <a href="#collections" class="w3-button w3-red w3-padding-large w3-large">Shop Sale</a>
+</div>
+
+<!-- About Section -->
+<div class="w3-container w3-padding-64" id="about">
+  <h2 class="w3-center">About Us</h2>
+  <p class="w3-center w3-large">KANJIVASTHRA brings tradition & trend together</p>
+  <p class="w3-center w3-text-grey" style="max-width:800px;margin:auto">
+    We offer a wide range of traditional and modern fashion apparel at the best prices. 
+    Our collections are carefully curated to bring out the perfect mix of style and comfort for every occasion. 
+    From ethnic wear to casuals, our platform ensures quality with elegance.
+  </p>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey w3-padding-64" id="contact">
+  <h2 class="w3-center">Contact Us</h2>
+  <div class="w3-row-padding" style="margin-top:32px">
+    <div class="w3-col m6">
+      <p><i class="fa fa-map-marker fa-fw w3-xlarge w3-margin-right"></i> Kerala, India</p>
+      <p><i class="fa fa-phone fa-fw w3-xlarge w3-margin-right"></i> Phone: +91 98765 43210</p>
+      <p><i class="fa fa-envelope fa-fw w3-xlarge w3-margin-right"></i> Email: support@kanjivasthra.com</p>
+    </div>
+    <div class="w3-col m6">
+      <form>
+        <input class="w3-input w3-border" type="text" placeholder="Name" required>
+        <input class="w3-input w3-border w3-margin-top" type="email" placeholder="Email" required>
+        <textarea class="w3-input w3-border w3-margin-top" placeholder="Message" required></textarea>
+        <button class="w3-button w3-black w3-margin-top" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32">
+  <p>© 2025 KANJIVASTHRA | Powered by W3.CSS</p>
+  <div>
+    <i class="fab fa-facebook w3-hover-opacity w3-xlarge w3-margin-right"></i>
+    <i class="fab fa-instagram w3-hover-opacity w3-xlarge w3-margin-right"></i>
+    <i class="fab fa-twitter w3-hover-opacity w3-xlarge w3-margin-right"></i>
+    <i class="fab fa-linkedin w3-hover-opacity w3-xlarge"></i>
+  </div>
+</footer>
+
+</body>
+</html>
